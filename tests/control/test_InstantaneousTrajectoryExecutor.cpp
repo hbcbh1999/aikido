@@ -162,4 +162,7 @@ TEST_F(
   future.get();
 
   EXPECT_DOUBLE_EQ(mSkeleton->getDof(0)->getPosition(), 1.0);
+
+  mSkeleton = nullptr;
+  EXPECT_DOUBLE_EQ(mSkeleton->getDof(0)->getPosition(), 1.0);
 }
