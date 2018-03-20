@@ -12,8 +12,6 @@ set -e
 ./scripts/internal-run.sh catkin build --no-status --no-deps -p 1 -i --cmake-args -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTREAT_WARNINGS_AS_ERRORS=ON -DCODECOV=$CODECOV --make-args tests -- aikido
 
 # Run tests and measure test coverage if CodeCov is on.
-./build/aikido/tests/planner/ompl/test_GeometricStateSpace
-./scripts/internal-run.sh env CTEST_OUTPUT_ON_FAILURE=true ./build/aikido/tests/planner/ompl/test_GeometricStateSpace
 if [ $CODECOV = ON ]; then ./scripts/internal-run.sh make -C build/aikido aikido_coverage; else ./scripts/internal-run.sh env CTEST_OUTPUT_ON_FAILURE=true make -C build/aikido test; fi
 
 # Uploading report to CodeCov
