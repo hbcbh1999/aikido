@@ -1,5 +1,5 @@
 add_subdirectory("parabolic")
-add_subdirectory("ompl")
+# add_subdirectory("ompl")
 add_subdirectory("vectorfield")
 
 aikido_add_test(test_SnapPlanner test_SnapPlanner.cpp)
