@@ -13,6 +13,8 @@ set -e
 
 # Run tests and measure test coverage if CodeCov is on.
 if [ $CODECOV = ON ]; then ./scripts/internal-run.sh make -C build/aikido aikido_coverage; else ./scripts/internal-run.sh env CTEST_OUTPUT_ON_FAILURE=true make -C build/aikido test; fi
+./build/aikido/tests/planner/ompl/test_GeometricStateSpace
+./scripts/internal-run.sh env CTEST_OUTPUT_ON_FAILURE=true ./build/aikido/tests/planner/ompl/test_GeometricStateSpace
 
 # Uploading report to CodeCov
 if [ $CODECOV = ON ]; then bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"; fi
