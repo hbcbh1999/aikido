@@ -11,7 +11,7 @@
   <depend>boost</depend>
   <depend>dart</depend>
   <depend>eigen</depend>
-  <depend>ompl</depend>
+  <!--depend>ompl</depend-->
   <depend>python</depend>
   <depend>tinyxml2</depend>
   <depend>yaml-cpp</depend>
